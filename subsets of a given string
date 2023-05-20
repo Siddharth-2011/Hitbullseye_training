@@ -1,0 +1,22 @@
+//finding all subsets f a string
+#include<iostream>
+#include<string>
+using namespace std;
+void subsets(string s,string curr=" ",int i=0)
+{
+	if(i==s.length())
+	{
+		cout<<curr;
+		return;
+	}
+	subsets(s,curr,i+1);
+	subsets(s,curr+s[i],i+1);
+}
+int main()
+{
+	string str;
+	cout<<"enter the string you want to find subsets of\n";
+	cin>>str;
+	cout<<"the subsets of the given string are\n";
+	subsets(str);
+}
